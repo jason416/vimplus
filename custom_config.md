@@ -74,6 +74,10 @@ set fileencoding=utf-8
 set mouse=n
 "set mouse+=v
 set nocompatible
+set noignorecase "Not ignore case
+set noexpandtab  "Not expand tab as space
+set wrap         "Display in newline when words too long to show in one line
+
 "set confirm
 "set autoindent
 "set cindent
