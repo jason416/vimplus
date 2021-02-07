@@ -97,6 +97,35 @@ set wrap         "Display in newline when words too long to show in one line
 "set fillchars=vert:\ ,stl:\ ,stlnc:\
 "set showmatch
 "set matchtime=1
+
+""""""""""""""""""""""""""""""""""""""""""""
+" gtags
+""""""""""""""""""""""""""""""""""""""""""""
+set cscopetag " 使用 cscope 作为 tags 命令
+set cscopeprg='gtags-cscope' " 使用 gtags-cscope 代替 cscope
+
+
+"gtags.vim 设置项
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+
+let gtags_file=findfile("GTAGS", ";") "查找 gtags 文件
+if !empty(gtags_file)
+	set nocsverb
+    exe "cs add" gtags_file
+	set csverb
+endif
 ```
 
+# Custom plugins
+
+add thes lines in .vimrc.custom.plugins
+
+```
+"AI autocomplete plugin, NICE TOOLS EVER USED, Conflict with YouCompleteMe!
+Plug 'zxqfl/tabnine-vim'
+Plug 'joereynolds/gtags-scope'
+Plug 'vim-scripts/gtags.vim'
+```
 
