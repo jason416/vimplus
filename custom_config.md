@@ -1,8 +1,43 @@
+# Install gtags enviornment
+
+## Install global
+
+Go http://www.gnu.org/software/global/download.html, download, compile and install to your system like this:
+
+```
+./configure
+make
+sudo make install
+```
+
+## Install vim plugin
+
+Add thes lines in .vimrc.custom.plugins and call plugin installer by `<leader><leader>i`
+
+```
+"AI autocomplete plugin, NICE TOOLS EVER USED, Conflict with YouCompleteMe!
+Plug 'zxqfl/tabnine-vim'
+Plug 'joereynolds/gtags-scope'
+Plug 'vim-scripts/gtags.vim'
+```
+
+## Configure plugin
+
+Check version of gtags.vim and gtags-cscope.vim in your vim plugins folder and global source folder, choose higher version in vim plugins folder.
+for vimplus, it is `~/.vim/plugged/gtags.vim/plugin` and `~/.vim/plugged/gtags-cscope.vim/plugin`
+
+## Build tags
+
+Go to root of your source file folder, execute `gtags` and `GTAGS, GRTAGS, GPATH` will be created. After this, you can browse code use jump system.
+
 # Install cscope environment
 
 1. install
 
+```
 apt install cscope 
+
+```
 
 2. add script
 
@@ -16,12 +51,12 @@ cscope -Rbkq
 
 3. build tags
 
-run `cscope-upd` in your root of source code tree, then you can use features of *ctags* and *cscope*
+Run `cscope-upd` in your root of source code tree, then you can use features of *ctags* and *cscope*
 
 
 # Custom config
 
-add thes lines in .vimrc.custom.config
+Add thes lines in .vimrc.custom.config
 
 ```
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -118,14 +153,4 @@ if !empty(gtags_file)
 endif
 ```
 
-# Custom plugins
-
-add thes lines in .vimrc.custom.plugins
-
-```
-"AI autocomplete plugin, NICE TOOLS EVER USED, Conflict with YouCompleteMe!
-Plug 'zxqfl/tabnine-vim'
-Plug 'joereynolds/gtags-scope'
-Plug 'vim-scripts/gtags.vim'
-```
 
